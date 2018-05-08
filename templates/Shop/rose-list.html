@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block shop_active %}active{% endblock %}
+
+{% block title %}Růže{% endblock %}
+
+{% block content %}
+
+    {% for rose in object_list %}
+
+      <div class="col-sm-6 col-md-4 col-lg-3 center-block">
+        <form method="get" action="/{{ rose.id }}">
+          <button class="btn btn-default" type="submit">
+          {% if rose.img %}
+           <img src='{{ rose.img.url }}' class='img-responsive' />
+            <img src='/media/{{rose.img}}' class='img-responsive' alt="Náhled růže" />
+          {% endif %}
+            <div class="caption">
+              <h3>{{ rose.name }}</h3>
+              <p>{{ rose.description }}</p>
+              <p><a href="#" class="btn btn-info" role="button">Koupit</a></p>
+            </div>
+          </button>
+        </form>
+      </div>
+    {% empty %}
+        <li>Vašemu výběru bohužel neodpovídá žádná růže.</li>
+    {% endfor %}
+
+      <div class="col-xs-12 text-center">
+          <ul class="pagination">
+              {% if object_list.has_previous %}
+                  <li><a href="?page={{ object_list.previous_page_number }}" aria-label="Předešlé"> &lt; </a></li>
+              {% endif %}
+
+              {% for num in object_list.paginator.page_range %}
+                  <li
+                    {% if num == object_list.number %}
+                      class="active"
+                    {% endif %}
+                    ><a href="?page={{num}}">{{num}}</a></li>
+              {% endfor %}
+
+              {% if object_list.has_next %}
+                  <li><a href="?page={{ object_list.next_page_number }}" aria-label="Další"> &gt; </a></li>
+              {% endif %}
+          </ul>
+      </div>
+
+{% endblock %}

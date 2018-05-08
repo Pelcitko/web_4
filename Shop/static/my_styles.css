@@ -1,0 +1,93 @@
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+  background: #FFEEDB;
+  background: -moz-linear-gradient(left,  #ffffff 0%, #ffeedb 47%, #ffffff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #ffffff 0%,#ffeedb 47%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #ffffff 0%,#ffeedb 47%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+#header{
+    background: #2b5800; /* Old browsers */
+    background: -webkit-linear-gradient(left, #ffffff 0%, #2b5800 25%, #e5fffe 75%, #ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #ffffff 0%, #2b5800 25%, #e5fffe 75%, rgba(255,255,255,0.55) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1); /* IE6-9 */
+}
+
+.navbar-form {
+  margin-bottom: 0px;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    /*text-align:left;*/
+    /* inline-block space fix */
+    /*margin-right:-4px;*/
+}
+.height-fixed {
+    /* custom width */
+    height:30px
+}
+
+.modal-footer{
+  padding: 0;
+}
+.modal-footer > .row > .col-xs-1{
+  padding: 0;
+}
+
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+#body {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+#carousel{
+  background: black;
+}
+
+
+/*.slovo {
+  position: fixed;
+  top: 0px;
+}*/
+
+.affix {
+    top: 70px;
+}
+
+.navbar-default.affix {
+    top: -7px;
+    z-index: 9999 !important;
+    padding-top: 6px;
+    background-color: #FFD7F5;
+}
+
+/*.btn-promary{
+  color: #80EDF7;
+}*/
+
+.onl_btn-facebook {background: #3b5998;border-color:#172d5e}
+.onl_btn_google {background: #c32f10;border-color:#6b1301}

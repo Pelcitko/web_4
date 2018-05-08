@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block shop_active %}active{% endblock %}
+
+{% block title %}Růže{% endblock %}
+
+{% block content %}
+
+{% if object_list %}
+    {% for rose in object_list %}
+
+      <div class="col-sm-6 col-md-4 col-lg-3 center-block">
+        <form method="get" action="/{{ rose.id }}">
+          <button class="btn btn-default" type="submit">
+            <img src="http://lorempixel.com/140/140/" class="img-circle" alt="Náhled růže">
+            <div class="caption">
+              <h3>{{ rose.name }}</h3>
+              <p>{{ rose.description }}</p>
+              <p><a href="#" class="btn btn-info" role="button">Koupit</a></p>
+            </div>
+          </button>
+        </form>
+      </div>
+
+    {% endfor %}
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+{% endblock %}

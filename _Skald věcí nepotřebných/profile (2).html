@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block user_active %}active{% endblock %}
+
+{% block content %}
+    <h1>{% block title %}Uživatelský profil{% endblock %}</h1>
+    <h2>{{profile.user.username}}</h2>
+    <a href="/password_change">Změnit heslo</a>
+    <a href="/logout/?next=/">odhlasit</a>
+    {% if saved %}
+      <p>Profil byl upraven.</p>
+    {% endif %}
+
+{% endblock %}
